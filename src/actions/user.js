@@ -1,4 +1,5 @@
 import history from "../history";
+import {getPokemon} from './pokemon'
 
 // ACTION TYPES
 
@@ -26,9 +27,10 @@ export const loginUser = (user) => {
       .then((data) => {
         if (data.user) {
           dispatch(getUser(data.user));
+          dispatch(getPokemon(data.user.pokemons));
           localStorage.setItem("token", data.jwt);
           //whereever you want to go after logging in
-          history.push("/home");
+          history.push(`/home`);
           // console.log(data.user)
         }
         //however you want  to  handle the error
@@ -78,6 +80,7 @@ export const getCurrentUser = (token) => {
       .then((resp) => resp.json())
       .then((data) => {
         dispatch(getUser(data.user));
+        dispatch(getPokemon(data.user.pokemons));
         // console.log(data.user)
       });
   };

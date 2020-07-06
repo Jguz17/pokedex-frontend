@@ -1,24 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PokemonContainer from './PokemonContainer'
+import PokemonTeam from './PokemonTeam'
+import '../index.css'
 
 export class PokedexHome extends Component {
     state = {
         jsonRESULTS: [],
-        pokes: []
+        pokes: [],
     }
     
     componentDidMount() {
         // fetch('https://pokeapi.co/api/v2/pokemon?limit=721')
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
         .then((res) => res.json())
         .then((data) => {
             data.results.map(test => {
-                this.setState({
-                    jsonRESULTS: [...this.state.jsonRESULTS, test]
-                })
-            })
-            this.state.jsonRESULTS.map(test => {
                 fetch(test.url)
                 .then((res) => res.json())
                 .then((data) => {
@@ -30,12 +27,17 @@ export class PokedexHome extends Component {
         })
     }
 
+    
     render() {
+        const pokeData = this.state.pokes.sort((a, b) => a.id - b.id)
+        // console.log(this.props)
         return (
-            <div>
+            <div className="pokedex-home">
                 <h1>Pokedex Home</h1>
-                {/* {console.log(this.state.pokes)} */}
-                <PokemonContainer pokes={this.state.pokes}/>
+                <div className='pokedex-home-container'>
+                    <PokemonContainer pokes={pokeData} user={this.props.user}/>
+                    <PokemonTeam/>
+                </div>
             </div>
         )
     }

@@ -3,3 +3,74 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  text-align: left;
+}
+
+body {
+  /* grey palette */
+  background-image: linear-gradient(to right bottom, #4a6675, #465c68, #42535b, #3e494f, #3a4043);
+   /* pink palette */
+  /* background-image: linear-gradient(to right bottom, #e1c3f5, #cdb2e4, #b9a2d3, #a692c2, #9382b2);  */
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pokedex-home-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.pokemon-container {
+  width: 65%;
+}
+
+/* .pokemon-container span {
+  padding-top: .5rem
+} */
+
+.pokemon-team {
+  position: fixed;
+  right: 2rem;
+  width: 30%;
+} 
+
+.pokemon-card {
+  display: inline-block;
+  width: 27%;
+  /* height: 2%; */
+  text-align: center;
+  border: 2px solid white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 1rem 1rem 1rem 0;
+  padding: 1rem 0 1rem 1rem;
+}
+
+.pokemon-card img {
+  padding-left: 3rem;
+}
+
+.pokemon-card-info {
+  display: flex;
+}
+
+.pokemon-card ul {
+  position: absolute;
+  padding-top: 1.5rem;
+}
+
+.show-pokemon-container {
+  display: flex;
+}

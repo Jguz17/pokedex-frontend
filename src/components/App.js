@@ -6,6 +6,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 import HelloWorld from './HelloWorld';
 import PokedexHome from './PokedexHome'
+import ShowPokemon from './ShowPokemon'
 
 class App extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class App extends Component {
           <Route path={'/signup'} component={SignUp} />
           <Route path={'/helloworld'} component={HelloWorld}/>
           <Route path={'/home'} component={PokedexHome}/>
+          <Route path={'/pokemon/:id'} component={ShowPokemon}/>
           <Route path={'/'} component={Login} />
         </Switch>
         <button onClick={this.props.logout}>logout</button>
