@@ -12,14 +12,14 @@ export class PokemonCard extends Component {
 
     addToTeamButton() {
         const name = this.props.poke.name
-        const dex_number = this.props.poke.id
+        const dex_id = this.props.poke.id
         const user_id = this.props.user.id
         let types = [];
         this.props.poke.types.map(type => types = [...types, type.type.name])
         const sprites = this.props.poke.sprites.front_default
         // console.log(sprites)
         // console.log(this.props.user)
-        const pokemonObj = ({name, dex_number, user_id, types, sprites})
+        const pokemonObj = ({name, dex_id, user_id, types, sprites})
         // console.log(pokemonObj)
         this.props.pokemonTeamFetch(pokemonObj)
     }

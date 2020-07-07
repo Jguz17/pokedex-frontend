@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { removePokemonFromTeam } from '../actions/pokemon'
+import { removePokemonFromTeam, editPokemonFromTeam } from '../actions/pokemon'
 // import pokemonObj from './PokemonCard'
 
 let pokemonName;
@@ -64,18 +64,19 @@ export class Test extends Component {
             inEditMode: !this.state.inEditMode
         })
         
-        fetch('http://localhost:3000/api/v1/pokemons/' + this.props.pokemon.id, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json',
-            },
-            body: JSON.stringify({
-                name: pokemonName
-            })
-        })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
+        // fetch('http://localhost:3000/api/v1/pokemons/' + this.props.pokemon.id, {
+        //     method: 'PATCH',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         Accept: 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //         name: pokemonName
+        //     })
+        // })
+        // .then((res) => res.json())
+        // .then((data) => console.log(data))
+        this.props.editPokemonFromTeam(this.props.pokemon.id, pokemonName)
     }
 
     render() {
@@ -99,7 +100,8 @@ export class Test extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        removePokemonFromTeam: (id) => dispatch(removePokemonFromTeam(id))
+        removePokemonFromTeam: (id) => dispatch(removePokemonFromTeam(id)),
+        editPokemonFromTeam: (id, name) => dispatch(editPokemonFromTeam(id, name))
     }
 }
 

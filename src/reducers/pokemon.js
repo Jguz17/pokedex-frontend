@@ -1,4 +1,4 @@
-import { GET_POKEMON, ADD_POKEMON, REMOVE_POKEMON } from '../actions/pokemon'
+import { GET_POKEMON, ADD_POKEMON, REMOVE_POKEMON, EDIT_POKEMON } from '../actions/pokemon'
 import {LOGOUT_USER} from '../actions/user'
 
 const initialState = [];
@@ -13,10 +13,11 @@ export default function pokemonReducer(state = initialState, action) {
         return [];
     case REMOVE_POKEMON:
         return state.filter(pokemon => pokemon.id !== action.id)
+    case EDIT_POKEMON:
+        return state.map(pokemon => pokemon.id === action.pokemon.id ? action.pokemon : pokemon)
     // return state.filter(pokemons => pokemons.pokemon.id !== action.id)
     // update
     //  return state.map(pokemon => pokemon === action.pokemon ? action.pokemon : pokemon)
-
     default:
       return state;
   }
