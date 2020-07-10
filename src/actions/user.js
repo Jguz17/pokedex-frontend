@@ -10,7 +10,7 @@ export const LOGOUT_USER = "LOGOUT_USER";
 export const getUser = (user) => ({ type: GET_USER, user });
 export const removeUser = () => ({ type: LOGOUT_USER });
 
-const API = "http://pokedex-app-api/api/v1/";
+const API = "https://pokedex-app-api.herokuapp.com/api/v1/";
 
 export const loginUser = (user) => {
   return (dispatch) => {
