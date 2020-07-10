@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { removePokemonFromTeam, editPokemonFromTeam } from '../actions/pokemon'
 // import pokemonObj from './PokemonCard'
+import '../pokedex.css'
 
 let pokemonName;
 
@@ -29,7 +30,7 @@ export class Test extends Component {
     }
 
     renderEditView() {
-        return <div>
+        return <div className='pokemon-team'>
                 <input id='edit-field' type='text' onChange={() => this.updateComponentValue()} defaultValue={this.props.pokemon.name} ref='textInput'/>
                 <button onClick={() => this.changeEditMode()}>X</button>
                 <button onClick={() => this.submitData()}>OK</button>
@@ -84,7 +85,7 @@ export class Test extends Component {
         // console.log(pokemonObj)
         
         return (
-            <div>
+            <div className='pokemon-in-team'>
                 <p>{this.props.pokemon.dex_id}</p>
                 {this.state.inEditMode ? this.renderEditView() : this.renderDefaultView()}
                 <ul>
@@ -92,7 +93,7 @@ export class Test extends Component {
                 </ul>
                 {console.log(this.props)}
                 <img src={this.props.pokemon.sprites}></img>
-                <input onClick={() => this.removePokemon(this.props.pokemon.id)} type='button' value="delete"></input>
+                <input id='delete-pokemon' onClick={() => this.removePokemon(this.props.pokemon.id)} type='button' value="delete"></input>
             </div>
         )
     }

@@ -1,40 +1,38 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import PokemonContainer from './PokemonContainer'
-import PokemonTeam from './PokemonTeam'
+import PokemonList from './PokemonList'
+import PokedexPokemonContainer from './PokedexPokemonContainer'
 import {Link} from 'react-router-dom'
-import { logoutUser } from '../actions/user';
-import '../index.css'
+import '../pokedex.css'
 import '../navbar.css'
+import { connect } from 'react-redux'
+import { logoutUser } from '../actions/user';
 
-export class PokedexHome extends Component {
+export class PokedexView extends Component {
     state = {
-        jsonRESULTS: [],
-        pokes: [],
+        pokemon: []
+        // currentlyDisplayed: {}
     }
-    
+
     componentDidMount() {
         fetch('https://pokeapi.co/api/v2/pokemon?limit=807')
         .then((res) => res.json())
         .then((data) => {
-            data.results.map(test => {
-                fetch(test.url)
+            data.results.map(pokemon => {
+                fetch(pokemon.url)
                 .then((res) => res.json())
                 .then((data) => {
                     this.setState({
-                        pokes: [...this.state.pokes, data]
+                        pokemon: [...this.state.pokemon, data]
                     })
                 })
             })
         })
     }
 
-    
     render() {
-        const pokeData = this.state.pokes.sort((a, b) => a.id - b.id)
-        // console.log(this.props)
+        // console.log(this.state.pokemon)
         return (
-            <div className="pokedex-home">
+            <div className='pokedex-view-container'>
                 <div className='nav-bar'>
                     <ul>
                         <li><Link to={'/home'}>Home</Link></li>
@@ -42,18 +40,12 @@ export class PokedexHome extends Component {
                         <li onClick={this.props.logout}>Logout</li>
                     </ul>
                 </div>
-                <div className='pokedex-home-container'>
-                    <PokemonContainer pokes={pokeData} user={this.props.user}/>
-                    <PokemonTeam/>
+                <div className='pokedex-view-container'>
+                    <PokedexPokemonContainer/>
+                    <PokemonList pokemon={this.state.pokemon}  />
                 </div>
             </div>
         )
-    }
-}
-
-const mapStateToProps = (state) => {
-    return {
-        user: state.user
     }
 }
 
@@ -63,4 +55,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PokedexHome)
+export default connect(null, mapDispatchToProps)(PokedexView)

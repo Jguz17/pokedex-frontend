@@ -7,6 +7,7 @@ import SignUp from './SignUp';
 import HelloWorld from './HelloWorld';
 import PokedexHome from './PokedexHome'
 import ShowPokemon from './ShowPokemon'
+import PokedexView from './PokedexView'
 
 class App extends Component {
   componentDidMount() {
@@ -25,9 +26,10 @@ class App extends Component {
           <Route path={'/helloworld'} component={HelloWorld}/>
           <Route path={'/home'} component={PokedexHome}/>
           <Route path={'/pokemon/:id'} component={ShowPokemon}/>
+          <Route path={'/pokedex'} component={PokedexView}/>
           <Route path={'/'} component={Login} />
         </Switch>
-        <button onClick={this.props.logout}>logout</button>
+        {/* <button onClick={this.props.logout}>logout</button> */}
       </div>
     );
   }

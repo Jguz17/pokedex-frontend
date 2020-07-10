@@ -8,6 +8,7 @@ export default function pokemonReducer(state = initialState, action) {
     case GET_POKEMON:
       return action.pokemons;
     case ADD_POKEMON:
+      // console.log(state)
         return [...state, action.pokemon]
     case LOGOUT_USER:
         return [];
@@ -15,9 +16,6 @@ export default function pokemonReducer(state = initialState, action) {
         return state.filter(pokemon => pokemon.id !== action.id)
     case EDIT_POKEMON:
         return state.map(pokemon => pokemon.id === action.pokemon.id ? action.pokemon : pokemon)
-    // return state.filter(pokemons => pokemons.pokemon.id !== action.id)
-    // update
-    //  return state.map(pokemon => pokemon === action.pokemon ? action.pokemon : pokemon)
     default:
       return state;
   }

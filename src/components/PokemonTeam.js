@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Test from './Test'
 import {connect} from 'react-redux'
-// import '../index.js'
+import '../index.js'
 
 export class PokemonTeam extends Component {
 

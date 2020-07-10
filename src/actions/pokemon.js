@@ -1,13 +1,9 @@
-import history from "../history";
-
 // ACTION TYPES
 
 export const GET_POKEMON = "GET_POKEMON";
 export const ADD_POKEMON = 'ADD_POKEMON';
 export const REMOVE_POKEMON = 'REMOVE_POKEMON';
 export const EDIT_POKEMON = 'EDIT_POKEMON';
-
-// export const EDIT_POKEMON = 'EDIT_POKEMON'
 
 //ACTION CREATORS
 export const getPokemon = (pokemons) => ({ type: GET_POKEMON, pokemons });

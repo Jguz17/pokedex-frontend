@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loginUser } from '../actions/user';
 import {Link} from 'react-router-dom'
+import '../login.css'
 
 class Login extends Component {
   state = {
@@ -23,20 +24,20 @@ class Login extends Component {
     const { username, password } = this.state;
     // console.log(this.props)
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-        username:
-        <input name='username' value={username} onChange={this.handleChange} />
-        password:
-        <input
-          name='password'
-          type='password'
-          value={password}
-          onChange={this.handleChange}
-        />
-        <button type='submit'>Login</button>
+      <div className='login-container'>
+        <form className='form-container' onSubmit={this.handleSubmit}>
+          <input class='input' name='username' value={username} onChange={this.handleChange} placeholder='username'/>
+          <input
+            class='input'
+            name='password'
+            type='password'
+            value={password}
+            onChange={this.handleChange}
+            placeholder='password'
+          />
+          <button id='login-button' type='submit'>Login</button>
+          <p>Don't have an account? <span><Link to={'/signup'}>Sign Up</Link></span></p>
         </form>
-        <button><Link to={'/signup'}>Click to create account</Link></button>
       </div>
     );
   }

@@ -1,0 +1,35 @@
+.nav-bar {
+    width: 100%;
+    background-color: #333333;
+    height: 3rem;
+}
+
+.nav-bar ul {
+    overflow: auto;
+}
+
+.nav-bar ul li {
+    display: inline-block;
+    float: left;
+    padding: .95rem 1rem;
+}
+
+.nav-bar ul li a,
+.nav-bar ul li {
+    color: aliceblue;
+}
+
+.nav-bar ul li:hover,
+.nav-bar ul li a:hover{
+    cursor: pointer;
+    background-color: #e1c3f5;
+    color: #333333;
+}
+
+.nav-bar ul li:first-child {
+    margin-left: 2rem;
+}
+
+.nav-bar ul li:last-child {
+    float: right;
+}
