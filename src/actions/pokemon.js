@@ -28,7 +28,7 @@ export const pokemonTeamFetch = (pokemonObj) => {
 
 export const removePokemonFromTeam = (id) => {
     return (dispatch) => {
-        fetch('https://pokedex-app-api.herokuapp.com/api/v1/pokemon/' + id, { method: 'DELETE' })
+        fetch('https://pokedex-app-api.herokuapp.com/api/v1/pokemons/' + id, { method: 'DELETE' })
         .then((res) => res.json())
         .then((data) => dispatch(removePokemon(id)))
     }
@@ -36,7 +36,7 @@ export const removePokemonFromTeam = (id) => {
 
 export const editPokemonFromTeam = (id, name) => {
     return (dispatch) => {
-        fetch('https://pokedex-app-api.herokuapp.com/api/v1/pokemon/' + id, {
+        fetch('https://pokedex-app-api.herokuapp.com/api/v1/pokemons/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
