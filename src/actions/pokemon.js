@@ -13,7 +13,7 @@ export const editPokemon = (pokemon) => ({ type:  EDIT_POKEMON, pokemon });
 
 export const pokemonTeamFetch = (pokemonObj) => {
    return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/pokemons', {
+        fetch('http://pokedex-app-api/api/v1/pokemons', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export const pokemonTeamFetch = (pokemonObj) => {
 
 export const removePokemonFromTeam = (id) => {
     return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/pokemons/' + id, { method: 'DELETE' })
+        fetch('http://pokedex-app-api/api/v1/pokemons/' + id, { method: 'DELETE' })
         .then((res) => res.json())
         .then((data) => dispatch(removePokemon(id)))
     }
@@ -36,7 +36,7 @@ export const removePokemonFromTeam = (id) => {
 
 export const editPokemonFromTeam = (id, name) => {
     return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/pokemons/' + id, {
+        fetch('http://pokedex-app-api/api/v1/pokemons/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
