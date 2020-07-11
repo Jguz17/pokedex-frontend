@@ -14,7 +14,7 @@ export class PokedexHome extends Component {
     }
     
     componentDidMount() {
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=807')
+        fetch('https://pokedex-app-api.herokuapp.com/api/v2/pokemon?limit=807')
         .then((res) => res.json())
         .then((data) => {
             data.results.map(test => {
