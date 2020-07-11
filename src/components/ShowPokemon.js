@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import InfoContainer from './InfoContainer'
-// import PokemonController from './PokemonController'
 
 export class ShowPokemon extends Component {
     state = {
@@ -18,7 +17,6 @@ export class ShowPokemon extends Component {
     }
 
     render() {
-        // console.log(this.props)
         return (
             <div className="show-pokemon-container">
                 <h1>{this.props.match.params.id}</h1>
@@ -27,7 +25,6 @@ export class ShowPokemon extends Component {
                     {this.state.pokemonInfo.sprites ? <img src={this.state.pokemonInfo.sprites.front_default}></img> : null}
                     
                 </div>
-                {/* <h1>Hello world</h1> */}
                 
             </div>
         )

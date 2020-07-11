@@ -6,7 +6,6 @@ export class PokedexPokemonContainer extends Component {
     render() {
         console.log(this.props.pokedex)
         return (
-            // style={this.props.pokedex.name ? {'border' : '2px solid #ABCBDB'} : null}
             <div className='pokedex-pokemon-info-container' >
                 {this.props.pokedex.sprites ? <img src={this.props.pokedex.sprites.front_default}/> : null}
                 {this.props.pokedex.id ?<p>No.: {this.props.pokedex.id}</p>: null }<br/>
@@ -30,7 +29,6 @@ const mapStateToProps = (state) => {
     return {
         pokedex: state.pokedex
     }
-    // console.log(state)
 }
 
 export default connect(mapStateToProps, null)(PokedexPokemonContainer)

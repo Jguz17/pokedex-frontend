@@ -25,11 +25,9 @@ class App extends Component {
           <Route path={'/signup'} component={SignUp} />
           <Route path={'/helloworld'} component={HelloWorld}/>
           <Route path={'/home'} component={PokedexHome}/>
-          {/* <Route path={'/pokemon/:id'} component={ShowPokemon}/> */}
           <Route path={'/pokedex'} component={PokedexView}/>
           <Route path={'/'} component={Login} />
         </Switch>
-        {/* <button onClick={this.props.logout}>logout</button> */}
       </div>
     );
   }

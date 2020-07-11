@@ -10,7 +10,6 @@ import { logoutUser } from '../actions/user';
 export class PokedexView extends Component {
     state = {
         pokemon: []
-        // currentlyDisplayed: {}
     }
 
     componentDidMount() {
@@ -30,7 +29,6 @@ export class PokedexView extends Component {
     }
 
     render() {
-        // console.log(this.state.pokemon)
         return (
             <div className='pokedex-view-container'>
                 <div className='nav-bar'>

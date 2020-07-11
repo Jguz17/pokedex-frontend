@@ -6,14 +6,10 @@ import '../index.js'
 export class PokemonTeam extends Component {
 
     render() {
-        // console.log(this.props.pokemon_team)
-        // console.log(this.props)
+
         return (
             <div className='pokemon-team'>
                 <h1>Test</h1>
-                {/* {this.props.pokemon_team.map(pokemon => {
-                    console.log(pokemon)
-                })} */}
                 {this.props.pokemons.map(pokemon => <Test pokemon={pokemon}/>)}
                 
             </div>

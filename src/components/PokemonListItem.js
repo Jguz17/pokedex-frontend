@@ -5,7 +5,6 @@ import { currentPokemon } from '../actions/pokedex'
 export class PokemonListItem extends Component {
 
     handleClick(pokemon) {
-        // console.log(pokemon)
         this.props.currentPokemon(pokemon)
     }
 

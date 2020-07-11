@@ -32,7 +32,6 @@ export class PokedexHome extends Component {
     
     render() {
         const pokeData = this.state.pokes.sort((a, b) => a.id - b.id)
-        // console.log(this.props)
         return (
             <div className="pokedex-home">
                 <div className='nav-bar'>

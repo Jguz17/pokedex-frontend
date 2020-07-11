@@ -8,7 +8,6 @@ export default function pokemonReducer(state = initialState, action) {
     case GET_POKEMON:
       return action.pokemons;
     case ADD_POKEMON:
-      // console.log(state)
         return [...state, action.pokemon]
     case LOGOUT_USER:
         return [];
