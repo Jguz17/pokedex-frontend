@@ -6,7 +6,7 @@ export class PokemonContainer extends Component {
 
         return (
             <div className='pokemon-container'>
-                <h1>Pokemon:</h1>
+                <h1>Pokemon Entries</h1>
                 {this.props.pokes.map(poke => {
                     return <PokemonCard poke={poke} user={this.props.user}/>
                 })}

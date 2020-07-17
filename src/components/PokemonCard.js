@@ -6,6 +6,10 @@ import {connect} from 'react-redux'
 
 export class PokemonCard extends Component {
 
+    state = {
+        hover: false
+    }
+
     addToTeamButton() {
         const name = this.props.poke.name
         const dex_id = this.props.poke.id
@@ -18,18 +22,24 @@ export class PokemonCard extends Component {
     }
     
     render() {
+
+
         return (
-                <div className='pokemon-card' >
-                    <div className="pokemon-card-info">
-                        <span>No.: {this.props.poke.id}</span>
+                <div className='pokemon-card'>
+                    <div className="pokemon-card-info" >
+                        <div className='poke-dex-num'>
+                            <p>No.{this.props.poke.id} : {this.props.poke.name}</p>
+                        </div>
+                        <div className='line-break'></div>
                         <ul>
                             {this.props.poke.types.map(type => <li>{type.type.name}</li>)}
                         </ul>
+                        <div className='line-break'></div>
                         <img src={this.props.poke.sprites.front_default}></img>
                     </div>
-                    <div className='pokemon-card-overlay'>
+                    {/* <div className='pokemon-card-overlay'> */}
                         <input type='button' value='add to team' onClick={() => this.addToTeamButton()}></input>
-                    </div>
+                    {/* </div> */}
                 </div>
         )
     }

@@ -9,7 +9,7 @@ export class PokemonTeam extends Component {
 
         return (
             <div className='pokemon-team'>
-                <h1>Test</h1>
+                <h1>Pokemon Team</h1>
                 {this.props.pokemons.map(pokemon => <Test pokemon={pokemon}/>)}
                 
             </div>

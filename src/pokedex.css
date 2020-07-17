@@ -44,7 +44,7 @@ body {
 }
 
 .pokemon-in-team {
-    padding-bottom: 20px;
+    padding: 1rem 0;
 }
 
 .pokemon-in-team input {

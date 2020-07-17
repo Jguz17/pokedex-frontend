@@ -47,15 +47,17 @@ body {
 .pokemon-team {
   position: fixed;
   right: 2rem;
-  width: 30%;
+  width: 20%;
 } 
 
 .pokemon-card {
+  
   display: inline-block;
   width: 27%;
+  /* max-height: 210px; */
   /* height: 2%; */
   text-align: center;
-  border: 2px solid white;
+  border: 3px solid white;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -64,21 +66,67 @@ body {
 }
 
 .pokemon-card:hover {
-  border: 2px solid #ABCBDB;
+  border: 3px solid #FF5159;
 }
 
 .pokemon-card img {
-  padding-left: 3rem;
+  /* padding-left: 3rem; */
+  margin: 0 auto;
 }
+
+/* .poke-name {
+  text-transform: capitalize;
+} */
 
 .pokemon-card-info {
   display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+  /* flex-grow: wrap; */
+  /* max-height: 300px; */
+  /* align-items: baseline; */
+  /* justify-content: start; */
+}
+
+.line-break {
+  width: 100%;
 }
 
 .pokemon-card ul {
-  position: absolute;
-  padding-top: 1.5rem;
+  /* position: absolute; */
+  /* padding-top: 1.5rem; */
 }
+/* 
+.poke-dex-num {
+  border: 2px solid black;
+
+} */
+
+.poke-dex-num {
+  padding: 2px 8px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.pokemon-card ul li {
+  padding: 2px 8px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.pokemon-card ul li,
+.poke-dex-num {
+  background-color: white;
+  
+  /* padding: 1px 3px; */
+  margin-bottom: 5px;
+}
+
+/* .pokemon-card ul li:nth-child(1) {
+  margin-bottom: 5px;
+} */
 
 .pokemon-card input {
   padding: 2.5px 25px;

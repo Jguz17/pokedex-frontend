@@ -42,7 +42,7 @@ export class Test extends Component {
                     id='edit' 
                     onClick={() => this.changeEditMode()} 
                     type='button' 
-                    value='edit nickname'>
+                    value='edit name'>
                 </input>
             </div>
         )
@@ -66,12 +66,11 @@ export class Test extends Component {
         
         return (
             <div className='pokemon-in-team'>
-                <p>{this.props.pokemon.dex_id}</p>
-                {this.state.inEditMode ? this.renderEditView() : this.renderDefaultView()}
+                <p>No.{this.props.pokemon.dex_id} : {this.state.inEditMode ? this.renderEditView() : this.renderDefaultView()}</p>
                 <ul>
                     {this.props.pokemon.types ? this.props.pokemon.types.map(type => <li>{type}</li>) : null}
                 </ul>
-                {console.log(this.props)}
+                {/* {console.log(this.props)} */}
                 <img src={this.props.pokemon.sprites}></img>
                 <input id='delete-pokemon' onClick={() => this.removePokemon(this.props.pokemon.id)} type='button' value="delete"></input>
             </div>

@@ -6,6 +6,7 @@
 
 .nav-bar ul {
     overflow: auto;
+    padding: 0 2rem;
 }
 
 .nav-bar ul li {
@@ -26,9 +27,9 @@
     color: #333333;
 }
 
-.nav-bar ul li:first-child {
+/* .nav-bar ul li:first-child {
     margin-left: 2rem;
-}
+} */
 
 .nav-bar ul li:last-child {
     float: right;
