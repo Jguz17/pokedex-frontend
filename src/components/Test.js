@@ -70,7 +70,6 @@ export class Test extends Component {
                 <ul>
                     {this.props.pokemon.types ? this.props.pokemon.types.map(type => <li>{type}</li>) : null}
                 </ul>
-                {/* {console.log(this.props)} */}
                 <img src={this.props.pokemon.sprites}></img>
                 <input id='delete-pokemon' onClick={() => this.removePokemon(this.props.pokemon.id)} type='button' value="delete"></input>
             </div>

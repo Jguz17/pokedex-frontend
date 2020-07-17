@@ -37,9 +37,7 @@ export class PokemonCard extends Component {
                         <div className='line-break'></div>
                         <img src={this.props.poke.sprites.front_default}></img>
                     </div>
-                    {/* <div className='pokemon-card-overlay'> */}
-                        <input type='button' value='add to team' onClick={() => this.addToTeamButton()}></input>
-                    {/* </div> */}
+                    <input type='button' value='add to team' onClick={() => this.addToTeamButton()}></input>
                 </div>
         )
     }
