@@ -29,8 +29,8 @@ export class Test extends Component {
     renderEditView() {
         return <div className='pokemon-team'>
                 <input id='edit-field' type='text' onChange={() => this.updateComponentValue()} defaultValue={this.props.pokemon.name} ref='textInput'/>
-                <button onClick={() => this.changeEditMode()}>X</button>
-                <button onClick={() => this.submitData()}>OK</button>
+                <button id='cancel' onClick={() => this.changeEditMode()}>X</button>
+                <button id='confirm' onClick={() => this.submitData()}>OK</button>
         </div>
     }
 
@@ -66,12 +66,14 @@ export class Test extends Component {
         
         return (
             <div className='pokemon-in-team'>
+                <div>
                 <p>No.{this.props.pokemon.dex_id} : {this.state.inEditMode ? this.renderEditView() : this.renderDefaultView()}</p>
                 <ul>
                     {this.props.pokemon.types ? this.props.pokemon.types.map(type => <li>{type}</li>) : null}
                 </ul>
                 <img src={this.props.pokemon.sprites}></img>
                 <input id='delete-pokemon' onClick={() => this.removePokemon(this.props.pokemon.id)} type='button' value="delete"></input>
+                </div>
             </div>
         )
     }

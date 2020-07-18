@@ -33,16 +33,6 @@ export class PokedexHome extends Component {
         })
     }
 
-    handleIconClick() {
-        // console.log('click')
-        const navBarId = document.getElementById('my-nav-bar')
-        if (navBarId.className === 'nav-bar') {
-            navBarId.className += ' responsive'
-        } else {
-            navBarId.className = 'nav-bar'
-        }
-    }
-
     
     render() {
         const pokeData = this.state.pokes.sort((a, b) => a.id - b.id)
@@ -53,11 +43,11 @@ export class PokedexHome extends Component {
                         <li><Link to={'/home'}>Home</Link></li>
                         <li><Link to={'/pokedex'}>Pokedex</Link></li>
                         <li onClick={this.props.logout}>Logout</li>
-                        <li onClick={() => this.handleIconClick()} className='icon'><FontAwesomeIcon icon={faEllipsisV}/></li>
                     </ul>
                 </div>
                 <div className='pokedex-home-container'>
                     <PokemonContainer pokes={pokeData} user={this.props.user}/>
+                    <hr/>
                     <PokemonTeam/>
                 </div>
             </div>

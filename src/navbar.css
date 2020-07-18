@@ -32,10 +32,6 @@
     margin-left: 2rem;
 } */
 
-.nav-bar ul li:nth-last-child(2) {
+.nav-bar ul li:nth-last-child(1) {
     float: right;
-}
-
-.nav-bar ul li:last-child {
-    display: none;
 }
