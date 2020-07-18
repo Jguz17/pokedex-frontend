@@ -4,8 +4,12 @@ import PokemonContainer from './PokemonContainer'
 import PokemonTeam from './PokemonTeam'
 import {Link} from 'react-router-dom'
 import { logoutUser } from '../actions/user';
+import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import '../index.css'
 import '../navbar.css'
+import '../media-queries.css'
+
 
 export class PokedexHome extends Component {
     state = {
@@ -29,16 +33,27 @@ export class PokedexHome extends Component {
         })
     }
 
+    handleIconClick() {
+        // console.log('click')
+        const navBarId = document.getElementById('my-nav-bar')
+        if (navBarId.className === 'nav-bar') {
+            navBarId.className += ' responsive'
+        } else {
+            navBarId.className = 'nav-bar'
+        }
+    }
+
     
     render() {
         const pokeData = this.state.pokes.sort((a, b) => a.id - b.id)
         return (
             <div className="pokedex-home">
-                <div className='nav-bar'>
+                <div className='nav-bar' id='my-nav-bar'>
                     <ul>
                         <li><Link to={'/home'}>Home</Link></li>
                         <li><Link to={'/pokedex'}>Pokedex</Link></li>
                         <li onClick={this.props.logout}>Logout</li>
+                        <li onClick={() => this.handleIconClick()} className='icon'><FontAwesomeIcon icon={faEllipsisV}/></li>
                     </ul>
                 </div>
                 <div className='pokedex-home-container'>

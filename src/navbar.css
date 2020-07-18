@@ -2,10 +2,11 @@
     width: 100%;
     background-color: #333333;
     height: 3rem;
+    overflow: auto;
 }
 
 .nav-bar ul {
-    overflow: auto;
+    /* overflow: auto; */
     padding: 0 2rem;
 }
 
@@ -31,6 +32,10 @@
     margin-left: 2rem;
 } */
 
-.nav-bar ul li:last-child {
+.nav-bar ul li:nth-last-child(2) {
     float: right;
+}
+
+.nav-bar ul li:last-child {
+    display: none;
 }
