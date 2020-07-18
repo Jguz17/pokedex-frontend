@@ -85,6 +85,29 @@
         width: 2rem;
         height: 1.6rem;
     }
+    /* POKEDEX FEATURE*/
+
+    .pokedex-pokemon-info-container {
+        float: left;
+        position: relative;
+        height: 50vh;
+        margin-left: 10%;
+        margin-top: 20%;
+    }
+
+    .pokedex-pokemon-info-container img {
+        width: initial;
+    }
+
+    .pokedex-pokemon-list {
+        float: right;
+        width: 25%;
+        max-height: 80vh;
+    }
+
+    .pokedex-pokemon-list h1 {
+        font-size: 1.2rem;
+    }
 }
 
 /* MOBILE LANDSCAPE MODE */
@@ -175,6 +198,30 @@
         width: 2rem;
         height: 1.6rem;
     }
+
+    /* POKEDEX FEATURE*/
+
+    .pokedex-pokemon-info-container {
+        float: left;
+        position: relative;
+        height: 50vh;
+        margin-left: 10%;
+        margin-top: 10%;
+    }
+
+    .pokedex-pokemon-info-container img {
+        width: initial;
+    }
+
+    .pokedex-pokemon-list {
+        float: right;
+        width: 20%;
+        max-height: 80vh;
+    }
+
+    .pokedex-pokemon-list h1 {
+        font-size: 1.2rem;
+    }
 }
 
 /* TABLET */
@@ -264,5 +311,30 @@
     #confirm {
         width: 2rem;
         height: 1.6rem;
+    }
+
+    /* POKEDEX FEATURE*/
+
+    .pokedex-pokemon-info-container {
+        float: left;
+        position: relative;
+        height: 50vh;
+        margin-left: 10%;
+        margin-top: 10%;
+        /* overflow: scroll; */
+    }
+
+    .pokedex-pokemon-info-container img {
+        width: initial;
+    }
+
+    .pokedex-pokemon-list {
+        float: right;
+        width: 20%;
+        max-height: 80vh;
+    }
+
+    .pokedex-pokemon-list h1 {
+        font-size: 1.2rem;
     }
 }
