@@ -1,6 +1,13 @@
 /* STANDARD MOBILE */
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
+    /* LOGIN */
+    
+    .form-container {
+        width: 100%;
+        text-align: -webkit-center;
+    }
+
     /* POKEDEX HOME */
 
     body {
@@ -113,6 +120,13 @@
 /* MOBILE LANDSCAPE MODE */
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+    /* LOGIN */
+    
+    .form-container {
+        width: 100%;
+        text-align: -webkit-center;
+    }
+    
     /* POKEDEX HOME */
 
     body {
